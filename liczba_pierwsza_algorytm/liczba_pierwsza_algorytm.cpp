@@ -1,9 +1,14 @@
 ﻿#include <iostream>
+#include <chrono>
 using namespace std;
+
+chrono::duration<double> elapsed_seconds;
 
 int main()
 {
     int do_ktorej, lp, p;
+
+    chrono::system_clock::time_point start = chrono::system_clock::now();	// czas start
 
     cout << "Podaj do ktorej liczby chcesz sprawdzic: ";
     cin >> do_ktorej;
@@ -33,8 +38,11 @@ int main()
         p += 1;
 
     }
+    chrono::system_clock::time_point end = chrono::system_clock::now(); // czas stop
 
+    elapsed_seconds += end - start;	// obliczenie czasu
 
+    cout << chrono::duration_cast<chrono::seconds>(elapsed_seconds).count() << "\t seconds\n";
 
     return 0;
 }
