@@ -1,2 +1,2 @@
-# Informatyka
-# Test
+# Zadania C++
+Szymon Zimecki
