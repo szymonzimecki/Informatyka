@@ -38,11 +38,11 @@ int main()
         p += 1;
 
     }
-    chrono::system_clock::time_point end = chrono::system_clock::now(); // czas stop
 
+    chrono::system_clock::time_point end = chrono::system_clock::now(); // czas stop
     elapsed_seconds += end - start;	// obliczenie czasu
 
-    cout << chrono::duration_cast<chrono::seconds>(elapsed_seconds).count() << "\t seconds\n";
+    cout << std::chrono::duration_cast<std::chrono::seconds>(elapsed_seconds).count() << "\t seconds\n";
 
     return 0;
 }
