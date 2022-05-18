@@ -2,9 +2,13 @@
 #include <chrono>
 using namespace std;
 
+chrono::duration<double> elapsed_seconds;
+
 int main()
 {
     int a, b, iloczyn, nww;
+
+    chrono::system_clock::time_point start = chrono::system_clock::now();	// czas start
 
     cout << "Podaj a: ";
     cin >> a;
@@ -33,4 +37,8 @@ int main()
 
     cout << "Najmniejsza wspolna wielokrotnosc: " << nww;
 
+    chrono::system_clock::time_point end = chrono::system_clock::now(); // czas stop
+    elapsed_seconds += end - start;	// obliczenie czasu
+
+    cout << std::chrono::duration_cast<std::chrono::seconds>(elapsed_seconds).count() << "\t seconds\n";
 }
